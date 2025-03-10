@@ -1,27 +1,29 @@
 
 body {background-color: rgb(132, 27, 27)}
 
-h1, h3 {
+.modstlye {
     font-family: 'Century Gothic';
     text-align: center;
     font-weight: bold;
     color: rgb(255, 22, 92);
-    margin-top: 50px;
-}
-h2 {
-    font-family: 'Century Gothic';
-    text-align: center;
-    size: 50pt;
-    color: rgb(255, 22, 92);
-    margin-top: 50px;
-
 }
 
-li {
+.shanstlye {
     font-family: 'Century Gothic';
     text-align: center;
     size: 50pt;
     color: rgb(172, 15, 62);
+}
+
+h1, h3 {
+    margin-top: 50px;
+}
+
+h2 {
+margin-top: 50px;
+}
+
+li {
     margin-top: 50px;
 }
 .image-container {
