@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+        h1, h3 {
+            font-family: 'Century Gothic';
+            text-align: center;
+            font-weight: bold;
+            color: rgb(255, 22, 92);
+            margin-top: 50px;
+        }
+        h2 {
+            font-family: 'Century Gothic';
+            text-align: center;
+            size: 50pt;
+            color: rgb(255, 22, 92);
+            margin-top: 50px;
+
+        }
+
+        li {
+            font-family: 'Century Gothic';
+            text-align: center;
+            size: 50pt;
+            color: rgb(172, 15, 62);
+            margin-top: 50px;
+        }
+        .image-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        img {
+            width: 400px;
+            height: auto;
+            animation: shake 0.5s infinite
+        }
+        
+        @keyframes shake {
+            0% { transform: translate(0, 0); }
+            10% { transform: translate(-5px, 0); }
+            20% { transform: translate(5px, 0); }
+            30% { transform: translate(-10px, 0); }
+            40% { transform: translate(5px, 0); }
+            50% { transform: translate(-5px, 0); }
+            60% { transform: translate(5px, 0); }
+            70% { transform: translate(-10px, 0); }
+            80% { transform: translate(5px, 0); }
+            90% { transform: translate(-5px, 0); }
+            100% { transform: translate(0, 0); }
+        }
+
+        body {background-color: rgb(0, 0, 0);}
+        </style> 
+    </head>
+    <body>
+        <h1> THE APPLE KNOWS YOUR CURRENT LOCATION </h1>
+        <h2><span id="ip-address"></span></h2>
+        <script src="https://api.ipify.org?format=jsonp&callback=getIP"></script>
+        <script>
+            // Function to get the IP address of the user
+            function getIpAddress(){
+                fetch("https://api.ipify.org/?format=json")
+                    .then(response => response.json())
+                    .then(data => {
+                        document.getElementById("ip-address").innerHTML = data.ip;
+                    })
+                    .catch(error => {
+                        console.log(error);
+                    })
+            }
+
+            getIpAddress();
+        </script>
+
+        <div class="image-container">
+            <img src="https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/25d45014-8cc3-4c98-b02c-5a0cf3a55ddd/dcrjbvx-b5078bbf-03ff-4625-b214-35c3f9fefc4c.png/v1/fill/w_900,h_900,strp/red_apple_on_a_transparent_background__by_prussiaart_dcrjbvx-fullview.png?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7ImhlaWdodCI6Ijw9OTAwIiwicGF0aCI6IlwvZlwvMjVkNDUwMTQtOGNjMy00Yzk4LWIwMmMtNWEwY2YzYTU1ZGRkXC9kY3JqYnZ4LWI1MDc4YmJmLTAzZmYtNDYyNS1iMjE0LTM1YzNmOWZlZmM0Yy5wbmciLCJ3aWR0aCI6Ijw9OTAwIn1dXSwiYXVkIjpbInVybjpzZXJ2aWNlOmltYWdlLm9wZXJhdGlvbnMiXX0.Y0-7z3OBNt3CbKeZrPiWJFD-4LhVF7I9iC2wADeZEAU" alt="photo of a red apple">
+            <div>
+        </body>
+    </html>
